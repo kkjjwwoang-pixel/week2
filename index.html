@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body { font-size: 20px; text-align: center; margin-top: 50px; }
+</style>
+</head>
+<body>
+
+<script>
+function memeConverter(weight){
+  let results = "";
+  
+  results += "개미 기준: " + Math.round(weight*1000000/5) + "마리<br>";
+  results += "햄버거 기준: " + Math.round(weight*1000/250) + "개<br>";
+  results += "고양이 기준: " + (weight/4).toFixed(1) + "마리<br>";
+  results += "오리 기준: " + (weight/3).toFixed(1) + "마리<br>";
+  results += "라면 기준: " + Math.round(weight*1000/120) + "봉지<br>";
+
+  document.body.innerHTML = "<h2>당신의 몸무게는...</h2>" + results;
+}
+
+let w = prompt("몸무게(kg)를 입력하세요");
+memeConverter(w);
+</script>
+
+</body>
+</html>
