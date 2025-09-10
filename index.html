@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <style>
 body { font-size: 20px; text-align: center; margin-top: 50px; }
+.item { margin-bottom: 30px; }
+.item img { width: 200px; display: block; margin: 0 auto 10px; }
 </style>
 </head>
 <body>
@@ -11,17 +13,20 @@ body { font-size: 20px; text-align: center; margin-top: 50px; }
 <script>
 function memeConverter(weight){
   let results = "";
-  
-  results += "개미 기준: " + Math.round(weight*1000000/5) + "마리<br>";
-  results += "햄버거 기준: " + Math.round(weight*1000/250) + "개<br>";
-  results += "고양이 기준: " + (weight/4).toFixed(1) + "마리<br>";
-  results += "오리 기준: " + (weight/3).toFixed(1) + "마리<br>";
-  results += "라면 기준: " + Math.round(weight*1000/120) + "봉지<br>";
+
+  results += '<div class="item"><img src="ant.png">' +
+             "개미 " + Math.round(weight*1000000/5) + "마리</div>";
+  results += '<div class="item"><img src="burger.png">' +
+             "햄버거 " + Math.round(weight*1000/250) + "개</div>";
+  results += '<div class="item"><img src="cat.png">' +
+             "고양이 " + (weight/4).toFixed(1) + "마리</div>";
+  results += '<div class="item"><img src="duck.png">' +
+             "오리 " + (weight/3).toFixed(1) + "마리</div>";
 
   document.body.innerHTML = "<h2>당신의 몸무게는...</h2>" + results;
 }
 
-let w = prompt("몸무게(kg)를 입력하세요");
+let w = prompt("몸무게를 입력하세요");
 memeConverter(w);
 </script>
 
